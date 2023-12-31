@@ -3,14 +3,12 @@
 import React from "react";
 import Image from "next/image";
 import { useTheme } from "@/context/ThemeProvider";
-import { MenubarShortcut } from "@/components/ui/menubar";
 import {
   Menubar,
   MenubarMenu,
   MenubarTrigger,
   MenubarContent,
   MenubarItem,
-  MenubarSeparator,
 } from "@radix-ui/react-menubar";
 import { themes } from "@/constants";
 
