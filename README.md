@@ -21,3 +21,5 @@ The project is based on a course, i.e. the efforts are aimed at:
 - Develop robust and scalable applications
 - Improve knowledge and learn best practices
 - Add a unique project to my portfolio.
+
+NOTE: The branches are the most up-to-date parts of the project!
