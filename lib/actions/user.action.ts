@@ -4,7 +4,11 @@ import { revalidatePath } from "next/cache";
 import User from "../database/user.model";
 
 import { connectToDatabase } from "../mongoose";
-import { CreateUserParams, UpdateUserParams } from "./shared.types";
+import {
+  CreateUserParams,
+  DeleteUserParams,
+  UpdateUserParams,
+} from "./shared.types";
 import Question from "../database/question.model";
 
 export async function getUserById(params: any) {
@@ -50,7 +54,7 @@ export async function updateUser(params: UpdateUserParams) {
   }
 }
 
-export async function deleteUser(params: DeleteUserParms) {
+export async function deleteUser(params: DeleteUserParams) {
   try {
     connectToDatabase();
 
