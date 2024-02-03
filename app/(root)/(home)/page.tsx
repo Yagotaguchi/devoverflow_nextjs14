@@ -9,8 +9,13 @@ import QuestionCard from "@/components/cards/QuestionCard";
 import { getQuestions } from "@/lib/actions/question.action";
 
 export default async function Home() {
-  const result = await getQuestions({});
+  const result: { questions: YourQuestionType[] } | undefined =
+    await getQuestions({});
 
+  if (!result) {
+    // Handle the case where result is undefined, perhaps show a loading state or handle the error
+    return <div>Loading...</div>;
+  }
   return (
     <>
       <div className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
