@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
 };
 
-export function RootLayout({ children }: { children: React.ReactNode }) {
+const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <html lang="en">
       <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
@@ -36,7 +36,7 @@ export function RootLayout({ children }: { children: React.ReactNode }) {
           appearance={{
             elements: {
               formButtonPrimary: "primary-gradient",
-              footerActionLink: "primary-text-gradient hover: text-primary-500",
+              footerActionLink: "primary-text-gradient hover:text-primary-500",
             },
           }}
         >
@@ -45,6 +45,6 @@ export function RootLayout({ children }: { children: React.ReactNode }) {
       </body>
     </html>
   );
-}
+};
 
 export default RootLayout;
