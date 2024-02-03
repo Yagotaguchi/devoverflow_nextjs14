@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import React, { useRef, useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
