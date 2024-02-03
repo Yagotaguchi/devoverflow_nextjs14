@@ -2,7 +2,6 @@ import mongoose from "mongoose";
 
 let isConnected: boolean = false;
 
-
 export const connectToDatabase = async () => {
   mongoose.set("strictQuery", true);
 
@@ -18,9 +17,5 @@ export const connectToDatabase = async () => {
     });
 
     isConnected = true;
-
-    console.log("MongoDB is Connected");
-  } catch (error) {
-    console.log("Mongodb connection Failed", error);
-  }
+  } catch (error) {}
 };
