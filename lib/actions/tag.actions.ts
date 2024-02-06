@@ -8,6 +8,7 @@ export async function getTopInteractedTags(params: GetTopInteractedTagsParams) {
     connectToDatabase();
     // const { page = 1, pageSize = 20, filter, searchQuery } = params;
 
+    // eslint-disable-next-line no-unused-vars
     const { userId, limit = 3 } = params;
 
     const user = await User.findById(userId);
