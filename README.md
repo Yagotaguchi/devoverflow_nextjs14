@@ -1,4 +1,4 @@
-Project Link: https://devoverflow-nextjs14-1rae1git9-yagos-projects-f6a26bb6.vercel.app/
+Project Link: https://devoverflow-nextjs14-l2rcyzsy1-yagos-projects-f6a26bb6.vercel.app/
 
 <h1>✨ Technologies Used</h1>
 
