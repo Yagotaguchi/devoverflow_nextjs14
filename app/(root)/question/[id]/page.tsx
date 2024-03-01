@@ -7,10 +7,20 @@ import { formatAndDivideNumber, getTimestamp } from "@/lib/utils";
 import ParseHTML from "@/components/shared/ParseHTML";
 import RenderTag from "@/components/shared/RenderTag";
 import Answer from "@/components/forms/Answer";
+import { auth } from "@clerk/nextjs";
+import { getUserById } from "@/lib/actions/user.action";
+import { getAllAnswers } from "@/lib/actions/answer.action";
+import NoResult from "@/components/shared/NoResult";
 
 const page = async ({ params, searchParams }) => {
   const result = await getQuestionbyId({ questionId: params.id });
+  const results = await getAllAnswers({});
+  const { userId: clerkId } = auth();
 
+  let mongoUser;
+  if (clerkId) {
+    mongoUser = await getUserById({ userId: clerkId });
+  }
   return (
     <>
       <div className="flex-start w-full flex-col">
@@ -71,7 +81,11 @@ const page = async ({ params, searchParams }) => {
           />
         ))}
       </div>
-      <Answer />
+      <Answer
+        question={result.content}
+        questionId={JSON.stringify(result._id)}
+        authorId={JSON.stringify(mongoUser._id)}
+      />
     </>
   );
 };
