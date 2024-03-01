@@ -9,12 +9,17 @@ import RenderTag from "@/components/shared/RenderTag";
 import Answer from "@/components/forms/Answer";
 import { auth } from "@clerk/nextjs";
 import { getUserById } from "@/lib/actions/user.action";
-import { getAllAnswers } from "@/lib/actions/answer.action";
-import NoResult from "@/components/shared/NoResult";
+// import { getAllAnswers } from "@/lib/actions/answer.action";
 
-const page = async ({ params, searchParams }) => {
+const page = async ({
+  params,
+  searchParams,
+}: {
+  params: any;
+  searchParams: any;
+}) => {
   const result = await getQuestionbyId({ questionId: params.id });
-  const results = await getAllAnswers({});
+  // const results = await getAllAnswers({});
   const { userId: clerkId } = auth();
 
   let mongoUser;
